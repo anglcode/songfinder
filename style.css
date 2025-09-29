@@ -1,0 +1,46 @@
+form {
+    align-items: center; 
+    display: flex;
+    flex-direction: column; 
+    
+  }
+    label{
+    color: antiquewhite;
+   
+  }
+  
+  #search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    flex-direction: column;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: yellowgreen;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;  
+    flex-direction: column;
+  }
+  p
+  {
+    color: antiquewhite;
+    text-align: center;
+  }
+  h1
+  {
+    color:#1DB954;
+    text-align: center;
+    size: 60px;
+  }
+  body{
+    background-color: black
+  }
+  h2{
+    color: antiquewhite;
+    text-align: center;
+  }
