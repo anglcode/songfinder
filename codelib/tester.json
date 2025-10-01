@@ -1,5 +1,6 @@
 [
     {
+        "title":"Asheville",
         "artist":"glaive",
         "bpm": 136,
         "vocals":"high",
@@ -7,10 +8,53 @@
         "genres":["hyperpop","techno"]
     },
     {
+        "title":"Appalachia",
         "artist":"glaive",
         "bpm": 140,
         "vocals":"high",
         "beat":"tech",
         "genre":["hyperpop","digicore"]
-    }
+    },
+    
+{
+    "title": "Cascade",
+    "artist": "glaive",
+    "bpm": 128,
+    "vocals": "medium",
+    "beat": "tech",
+    "genres": ["hyperpop", "electropop"]
+},
+{
+    "title": "Echo Valley",
+    "artist": "glaive",
+    "bpm": 145,
+    "vocals": "high",
+    "beat": "glitch",
+    "genres": ["digicore", "hyperpop"]
+},
+{
+    "title": "Neon Pines",
+    "artist": "glaive",
+    "bpm": 132,
+    "vocals": "low",
+    "beat": "ambient",
+    "genres": ["ambient pop", "hyperpop"]
+},
+{
+    "title": "Skytrace",
+    "artist": "glaive",
+    "bpm": 150,
+    "vocals": "high",
+    "beat": "tech",
+    "genres": ["techno", "hyperpop"]
+},
+{
+    "title": "Moonlight Drive",
+    "artist": "glaive",
+    "bpm": 138,
+    "vocals": "medium",
+    "beat": "trap",
+    "genres": ["trap", "hyperpop"]
+}
+
 ]

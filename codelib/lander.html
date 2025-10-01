@@ -7,17 +7,21 @@
         is the lander, it should link you to similar songs without the bad firewall
     </p> 
    
-    <input type="file" id="fileInput" />
-<script>
-    document.getElementById('fileInput').addEventListener('change', function(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const json = JSON.parse(e.target.result);
-        console.log(json);
-      };
-      reader.readAsText(file);
-    });
-  </script>
+    <input type="file" id="fileInput" multiple accept=".json"/>
+    <h2>Song Data</h2>
+    <div id ="songhold"></div>
+    <script src ="script2.js"></script>
+    <!--<script src = "fitalg.js"></script>-->
+    <script>
+
+
+
+
+   // const songlist = songtake(fileInput);
+    //const tarsong = songtake(filein2);
+   // var comp1 = bestsong(tarsong,songlist[0]);
+   // var comp2 = bestsong(tarsong,songlist[1]);
+   // console.log(comp1,comp2); 
+    </script>
   
 </body>
