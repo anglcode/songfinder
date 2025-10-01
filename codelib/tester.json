@@ -1,0 +1,16 @@
+[
+    {
+        "artist":"glaive",
+        "bpm": 136,
+        "vocals":"high",
+        "beat":"tech",
+        "genres":["hyperpop","techno"]
+    },
+    {
+        "artist":"glaive",
+        "bpm": 140,
+        "vocals":"high",
+        "beat":"tech",
+        "genre":["hyperpop","digicore"]
+    }
+]

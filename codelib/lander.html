@@ -1,16 +1,23 @@
 <!DOCTYPE html>
+<head> 
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    this is the lander, it should like you to similar songs without the bad firewall
+    <p>
+        is the lander, it should link you to similar songs without the bad firewall
+    </p> 
+   
+    <input type="file" id="fileInput" />
+<script>
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const json = JSON.parse(e.target.result);
+        console.log(json);
+      };
+      reader.readAsText(file);
+    });
+  </script>
+  
 </body>
-<form action="/submit-checklist.php" method="post">
-    <input type="checkbox" id="task1" name="tasks[]" value="Buy groceries">
-    <label for="task1">Buy groceries</label><br>
-  
-    <input type="checkbox" id="task2" name="tasks[]" value="Pay bills">
-    <label for="task2">Pay bills</label><br>
-  
-    <input type="checkbox" id="task3" name="tasks[]" value="Call insurance company" checked>
-    <label for="task3">Call insurance company</label><br><br>
-  
-    <input type="submit" value="Submit Checklist">
-  </form>
