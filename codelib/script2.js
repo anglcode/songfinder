@@ -22,9 +22,11 @@ document.addEventListener('DOMContentLoaded',() =>{
                 filesread++;
                 if(filesread==files.length){
                     if(refrencesong && songlist.length>0){
-                        sortbybpm(refrencesong,songlist);
-                        sortbyart(refrencesong,songlist);
-                        sortbygen(refrencesong,songlist);
+                        algdecide(
+                        sortbybpm(refrencesong,songlist),
+                        sortbyart(refrencesong,songlist),
+                        sortbygen(refrencesong,songlist),
+                        songlist);
                     }else{
                         console.error("missing refsong or list");
                     }
@@ -46,13 +48,10 @@ function sortbybpm(ref,songs){
     })).sort((a,b)=> a.bpmdif - b.bpmdif);
     console.log(`Targetsong: ${ref.title}(${refbpm})`);
     console.log("Songs Sorted by BPM Difference");
-    const songhold = document.getElementById('songhold');
     sorted.forEach(song =>{
         console.log(`${song.title} (${song.bpm}bpm) - dif:${song.bpmdif}`)
-        const paratext = document.createElement('p');
-        paratext.textContent = `${song.title} (${song.bpm}bpm) - dif:${song.bpmdif}`;
-        songhold.appendChild(paratext);
     });
+    return sorted;
 }
 
 function sortbyart(ref,songs){
@@ -65,6 +64,7 @@ function sortbyart(ref,songs){
     sorted.forEach(song =>{
         console.log(`${song.title} (${song.artist}) - target:${song.artdif}`);
     });
+    return sorted;
 }
 
 function sortbygen(ref,songs){
@@ -75,4 +75,32 @@ function sortbygen(ref,songs){
     sorted.forEach(song => {
         console.log(`${song.title} (${song.genres}) - matches:${song.genmat}`);
     });
+    return sorted;
 }
+
+function algdecide(bpmsort,artsort,gensort,songs){
+
+    const combined = songs.map(song => {
+        const bpmData = bpmsort.find(s => s.title === song.title);
+        const artData = artsort.find(s => s.title === song.title);
+        const genData = gensort.find(s => s.title === song.title);
+
+        const score = (10 - bpmData.bpmdif) + (artData.artdif * 3) + (genData.genmat.length * 4);
+
+        return {
+            ...song,
+            bpmdif: bpmData.bpmdif,
+            artdif: artData.artdif,
+            genmatchcount: genData.genmat,
+            score
+        };
+    });
+    const songhold = document.getElementById('songhold');
+    const sorted = combined.sort((a, b) => b.score - a.score);
+    sorted.forEach(song => {
+    const titlepara = document.createElement('p');
+      titlepara.textContent = `Title: ${song.title}, Score: ${song.score}`;
+      songhold.appendChild(titlepara);
+    })
+}
+
